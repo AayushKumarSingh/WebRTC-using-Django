@@ -9,8 +9,5 @@
             "src": "/(.*)",
             "dest": "djangoProject/wsgi.py"
         }
-    ],
-    "engines": {
-        "node": "18.x"
-    }
+    ]
 }
