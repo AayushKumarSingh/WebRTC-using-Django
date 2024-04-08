@@ -2,15 +2,15 @@
     "builds": [{
         "src": "djangoProject/wsgi.py",
         "use": "@vercel/python",
-        "config": {
-            "maxLambdaSize": "15mb",
-            "pipFile": "Pipfile"
-        }
+        "config": { "maxLambdaSize": "15mb"}
     }],
     "routes": [
         {
             "src": "/(.*)",
             "dest": "djangoProject/wsgi.py"
         }
-    ]
+    ],
+    "engines": {
+        "node": "18.x"
+    }
 }
