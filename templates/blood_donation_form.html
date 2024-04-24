@@ -1,0 +1,48 @@
+{% extends "base.html" %}
+{% block content %}
+    <style>
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* Adjust as needed */
+}
+
+
+.form-container {
+    max-width: 400px; /* Adjust as needed */
+    padding: 20px;
+}
+
+
+.form-container form {
+    border: 2px solid black; /* Border color */
+    border-radius: 5px;
+    padding: 15px;
+    background-color: wheat;
+}
+
+
+.form-container form:focus-within {
+    border-color: #007bff; /* Outline color */
+    box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.25); /* Outline effect */
+}
+
+.button{
+    align: center;
+}
+
+    </style>
+
+    <div class="container">
+    <div class="form-container">
+    <h2>Blood Donation Form</h2>
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button class="button" type="submit">Submit</button>
+    </form>
+    </div>
+    </div>
+{% endblock %}
